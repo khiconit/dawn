@@ -80,6 +80,10 @@
             <h1 class="product__title">
               {{ product.title | escape }}
             </h1>
+<!-- Start Areviews product title Rating Code -->
+<div class='areviews_header_stars'></div> 
+<!-- End Areviews product title Rating Code -->
+
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}">
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
@@ -406,6 +410,10 @@
       </div>
     </modal-dialog>
   {%- endfor -%}
+
+{% comment %}Start automatically added Judge.me widget{% endcomment %}
+  {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %}
+{% comment %}End automatically added Judge.me widget{% endcomment %}
 </section>
 
 {% javascript %}
