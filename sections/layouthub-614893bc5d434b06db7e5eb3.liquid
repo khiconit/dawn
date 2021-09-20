@@ -1,0 +1,123 @@
+{% comment %}
+ LayoutHub (https://layouthub.com)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from LayoutHub
+ {% endcomment %} 
+ <!-- NO-FONT-FACE--><!--LayoutHub-Embed-->{{"lh-614893bc5d434b06db7e5eb3.css" | asset_url | stylesheet_tag }}{% comment %}
+ LayoutHub (https://layouthub.com)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from LayoutHub
+ {% endcomment %} 
+ <div class="lh-sections-wrapper" data-id="614893bc5d434b06db7e5eb3" data-type="page">
+<section id="LH-J516LK0W7QE" data-layouthub="section"><div class="lh-collection-page lh-wrapper">{% assign tmpl =  template | replace: '.', ' ' | truncatewords: 1, '' | handle %}
+            {% if  tmpl != 'collection' %}
+                  
+                    {% assign collection = collections.last %}
+                  
+            {% endif %}
+            {% assign limit  = 12  | plus: 0 %}<div class="lh-row"><div class="lh-col-md-12"><h3 class="lh-title" data-lhi="title" data-lhis="title">Featured products</h3></div><div class="lh-col-sm-12 lh-collection-page__main lh-col-md-12"><div class="lh-product-collection-com__wrapper" data-com="CollectionProduct"><ul class="lh-row">{%- if  collection != blank and collection.all_products_count > 0 -%}
+                {%- assign crop_size = '480x' -%}
+                {%- assign crop_position = 'center' -%}
+                {%- assign crop_type = 'auto' -%}
+             
+                {%- assign uniqId = '1632146341610' -%}
+                {%- paginate collection.products by limit -%}
+                    {%- for product in collection.products -%}
+                        {%- assign variant_selected = product.selected_or_first_available_variant -%}
+                        {%- assign hasSwatches = false -%}
+                        <li class="lh-collection-page__product-item lh-col-sm-6 lh-col-md-4">
+                            {% assign form_id =  product.id | append: '-' | append:  uniqId %}
+                            {%- assign money_format = shop.money_format | url_encode -%}
+                            {% form 'product', product, class:'lh-product-item__form', data-form-id: form_id, data-id: product.id, data-pid: product.id, data-money-format: money_format %}
+                                <div class="lh-product-swatch-wrapper">
+                                    {% assign secondary_image = product.images[1] %}
+                                    
+                                    <div class="lh-product-image">
+                                        {% if crop_type == 'auto'%}
+                                            <div class="lh-prduct-featured-image">
+                                                <img src="{{ product.featured_image | img_url:'480x', crop: crop_position }}"  class="lh-product-image" loading="lazy" 
+                                                    srcset="{{ product.featured_image | img_url :'480x', crop: crop_position }} 480w, {{ product.featured_image | img_url: '640x', crop: crop_position }} 640w, {{ product.featured_image | img_url: '900x', crop: crop_position }} 900w, {{ product.featured_image | img_url: '1080x', crop: crop_position }} 1080w"
+                                                />
+                                            </div>
+                                            {%- if product.images.size > 1-%}
+                                                <div class="lh-prduct-secondary-image">
+                                                    <img src="{{ secondary_image  | img_url: '480x', crop: crop_position }}" class="lh-product-image" loading="lazy"
+                                                        srcset="{{ secondary_image | img_url: '480x', crop: crop_position }} 480w, {{ secondary_image | img_url: '640x', crop: crop_position }} 640w, {{ secondary_image |img_url: '900x', crop: crop_position }} 900w, {{ secondary_image | img_url: '1080x', crop: crop_position }} 1080w"
+                                                        />
+                                                </div>
+                                            {%- endif -%}
+                                        {% elsif crop_type == 'custom' %}
+                                            <div class="lh-prduct-featured-image">
+                                                <img src="{{ product.featured_image | img_url: crop_size, crop: crop_position }}"  class="lh-product-image crop_custom" loading="lazy" />
+                                            </div>
+                                            {%- if product.images.size > 1-%}
+                                                <div class="lh-prduct-secondary-image">
+                                                    <img src="{{  secondary_image  | img_url: crop_size, crop: crop_position }}" class="lh-product-image crop_custom" loading="lazy" />
+                                                </div>
+                                            {%- endif -%}
+                                        {% else %}
+                                            <div class="lh-prduct-featured-image">
+                                                <img src="{{ product.featured_image | img_url :'master' }}"  class="lh-product-image" loading="lazy" />
+                                            </div>
+                                            {%- if product.images.size > 1-%}
+                                                <div class="lh-prduct-secondary-image">
+                                                    <img src="{{ secondary_image  | img_url: 'master' }}" class="lh-product-image" loading="lazy" />
+                                                </div>
+                                            {%- endif -%}
+                                        {% endif %}
+                                    </div>
+                                    <div class="lh-product-actions">
+                                        <div class="lh-buttons-container">
+                                            {% if product.available == false %}
+                                                <a href="{{ product.url }}" title="{{ product.title | escape }}">View more</a>
+                                            {% elsif product.has_only_default_variant %}
+                                                <a href="/cart/add/{{ variant_selected.id }}" class="lh-product-btn-outstock" data-id="{{ variant_selected.id }}" class="lh-btn-add-to-cart" data-handle="{{ product.handle }}" data-pid="{{ product.id }}" title="{{ product.title | escape }}">Add to cart</a>
+                                            {% else  %}
+                                                <button class="lh-view-more-btn" type="button">View more</button>
+                                            {% endif %}
+                                            {% capture quickview_content %}
+                                                <span>Quick view</span>
+                                            {% endcapture %}
+                                            {%- render 'layouthub_quickview', quickview_content: quickview_content, product: product -%}
+                                            {%- capture wishlist_content -%}
+                                                Wishlist
+                                            {%- endcapture -%}
+                                            {%- render 'layouthub_wishlist', wishlist_content:wishlist_content, wishlist_type: 'other',product: product -%}
+                                        </div>
+                                    </div>
+                               
+                               
+                                </div>
+                                <div class="lh-product-information">
+                                    <h3 class="lh-product-title">
+                                        <a href="{{ product.url }}" title="{{ product.title | escape }}">{{ product.title }}</a>
+                                    </h3>
+                                     
+ 										<div class="lh-rating-wrapper">
+ 											{% render 'layouthub_review',  review_type: 'rating' ,product: product %}
+ 										</div>
+ 									 
+                                    <div class="lh-product-prices">
+                                        <ins>{{ product.price  | money }}</ins>
+                                        {% if product.price_varies %}
+                                            <del>{{ product.compare_at_price_max | money }}</del>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                               
+                            {% endform%}
+                            
+                        </li>
+                    {%-  endfor -%}
+                {% endpaginate %%}
+            {%- else -%}
+                <li class="lh-collection-page__product-item lh-collection-empty">
+                    <h3>No product yet!</h3>
+                <li>
+            {%- endif -%}</ul></div></div></div></div></section>
+</div><script type="text/javascript">window.LHPAGE=window.LHPAGE||{};window.LHPAGE.id='614893bc5d434b06db7e5eb3';window.LHPAGE.title='ai+cha+cha';window.LHPAGE.type='page'</script>
+'-%}
+<script src="{{"lh-614893bc5d434b06db7e5eb3.js" | asset_url  }}" defer="defer" class="layouthub-script"></script><!--/LayoutHub-Embed-->
+ {%schema%} 
+{"locales":{"en":{}},"name":"ai cha cha"}
+ {%endschema%}
