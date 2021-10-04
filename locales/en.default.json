@@ -445,6 +445,7 @@
     "go_to_wishlist_page": "Go to wishlist page",
     "list_name_limit": "You have exceeded the character limit",
     "review_token_expired": "You're late. The link is expired!",
-    "view_on_instagram": "View on Instagram"
+    "view_on_instagram": "View on Instagram",
+    "login_required_to_review": "Please log in to leave your review"
   }
 }
