@@ -135,12 +135,8 @@
                 ssw('#ssw-avg-rate-profile-html .ssw-stars, #ssw-avg-rate-profile-html .ssw-question-count').click(function () {
                     if (ssw('#ssw-widget-recommends-html').length > 0) {
                         ssw('html, body').animate({scrollTop : ssw("#ssw-widget-recommends-html").offset().top - 40 }, 500);
-                        if (ssw('#ssw-widget-recommends-html').find('.for_bot').length) {
-                            var $self = ssw(this);
-                            sswAddEventListener('reviewWidgetLoaded', function() {clickButton($self)});
-                        } else {
-                            clickButton(ssw(this));
-                        }
+                        var $self = ssw(this);
+                        sswAddEventListener('reviewWidgetLoaded', function() {clickButton($self)});
                     }
                 });
             });
