@@ -22,7 +22,8 @@
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    {{ content_for_header }}  {{ shop.metafields.fontify.stylesheets }}
+    {{ content_for_header }} 
+ {{ shop.metafields.fontify.stylesheets }}
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
@@ -156,7 +157,6 @@
 
     <script src="{{ 'slider.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'variants.js' | asset_url }}" defer="defer"></script>
-  {{ 'https://lookbook.nitroapps.co/public/shop-libs/nitro-lookbook.js' | script_tag }}
-{%- render 'layouthub_footer' -%} 
+
  </body>
 </html>
