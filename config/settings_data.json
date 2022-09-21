@@ -60,7 +60,7 @@
     "blocks": {
       "5079900590606040369": {
         "type": "shopify:\/\/apps\/fontify-local\/blocks\/app-embed\/c7889997-8d14-4fd4-a944-648212197d12",
-        "disabled": true,
+        "disabled": false,
         "settings": {
         }
       }
